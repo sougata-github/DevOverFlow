@@ -63,7 +63,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="background-light900_dark200 border-none "
+        className="background-light900_dark200 custom-scrollbar overflow-y-auto border-none "
       >
         <Link href="/" className="flex items-center gap-1">
           <Image
@@ -73,7 +73,7 @@ const MobileNav = () => {
             alt="DevFlow"
           />
           <p className="h2-bold text-dark100_light900 ml-2 font-spaceGrotesk">
-            Dev <span className="text-primary-500 ">Flow</span>
+            Dev<span className="text-primary-500 ">Flow</span>
           </p>
         </Link>
 
