@@ -5,7 +5,7 @@ import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { SignedOut } from "@clerk/nextjs";
 
 const LeftSidebar = () => {
