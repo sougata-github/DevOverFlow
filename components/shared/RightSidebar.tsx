@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import RenderTags from "./RenderTags";
-import { Tangent } from "lucide-react";
 
 const RightSidebar = () => {
   const questions = [
