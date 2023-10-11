@@ -6,27 +6,27 @@ import RenderTags from "./RenderTags";
 const RightSidebar = () => {
   const questions = [
     {
-      _id: 1,
+      _id: "1",
       title:
         "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)? ",
     },
     {
-      _id: 2,
+      _id: "2",
       title:
         "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)? ",
     },
     {
-      _id: 3,
+      _id: "3",
       title:
         "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)? ",
     },
     {
-      _id: 4,
+      _id: "4",
       title:
         "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)? ",
     },
     {
-      _id: 5,
+      _id: "5",
       title:
         "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)? ",
     },
@@ -34,27 +34,27 @@ const RightSidebar = () => {
 
   const popularTags = [
     {
-      _id: 1,
+      _id: "1",
       name: "javascript",
       totalQuestions: 1,
     },
     {
-      _id: 2,
+      _id: "2",
       name: "javascript",
       totalQuestions: 2,
     },
     {
-      _id: 3,
+      _id: "3",
       name: "javascript",
       totalQuestions: 3,
     },
     {
-      _id: 4,
+      _id: "4",
       name: "javascript",
       totalQuestions: 4,
     },
     {
-      _id: 5,
+      _id: "5",
       name: "javascript",
       totalQuestions: 5,
     },
