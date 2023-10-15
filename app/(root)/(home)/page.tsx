@@ -20,7 +20,7 @@ const questions = [
       name: "John Doe",
       picture: "john-doe.jpg",
     },
-    views: 100,
+    views: 2000,
     upvotes: 10,
     answers: [],
     createdAt: new Date("2021-09-01T12:00:00.000Z"),
@@ -40,7 +40,7 @@ const questions = [
     views: 100,
     upvotes: 10,
     answers: [],
-    createdAt: new Date("2021-09-01T12:00:00.000Z"),
+    createdAt: new Date("2023-09-01T12:00:00.000Z"),
   },
 ];
 
