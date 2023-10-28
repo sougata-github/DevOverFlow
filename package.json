@@ -26,7 +26,7 @@
     "lucide-react": "^0.284.0",
     "mongodb": "^6.1.0",
     "mongoose": "^7.6.3",
-    "next": "latest",
+    "next": "13.5",
     "prettier": "^3.0.3",
     "react": "latest",
     "react-dom": "latest",

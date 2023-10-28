@@ -51,7 +51,6 @@ const Question = ({ mongoUserId }: Props) => {
       // make an async call to API -> to create a question
       // it will contain all form data
       // navigate to home page
-
       await createQuestion({
         title: values.title,
         content: values.explanation,
@@ -59,7 +58,6 @@ const Question = ({ mongoUserId }: Props) => {
         // get form DB
         author: JSON.parse(mongoUserId),
       });
-
       router.push("/");
     } catch (error) {
     } finally {
