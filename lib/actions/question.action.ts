@@ -38,5 +38,7 @@ export async function createQuestion(params: any) {
     });
 
     // Create an interaction record for user's ask-question action and then increment author's reputation by +5 for creating a question
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
