@@ -9,10 +9,10 @@ export async function createQuestion(params: any) {
     connectToDatabase();
     const { title, content, tags, author } = params;
 
+    // Create the question
     const question = await Question.create({
       title,
       content,
-      tags,
       author,
     });
 
@@ -23,9 +23,9 @@ export async function createQuestion(params: any) {
         {
           name: { $regex: new RegExp(`^${tag}$`, "i") },
         },
-        { $setOnInsert: { name: tag }, $push: { question: question._id } }, // insert a specific tag for a question
+        { $setOnInsert: { name: tag }, $push: { question: question._id } }, // insert a question for a specific tag
         {
-          $upsert: true,
+          upsert: true,
           new: true,
         }
       );
