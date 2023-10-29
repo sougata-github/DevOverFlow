@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { QuestionsSchema } from "@/lib/validations";
 import React, { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Editor } from "@tinymce/tinymce-react";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
@@ -33,7 +33,7 @@ const Question = ({ mongoUserId }: Props) => {
   const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
-  // const pathname = usePathname();
+  const pathname = usePathname();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof QuestionsSchema>>({
@@ -57,6 +57,7 @@ const Question = ({ mongoUserId }: Props) => {
         tags: values.tags,
         // get form DB
         author: JSON.parse(mongoUserId),
+        path: pathname,
       });
       router.push("/");
     } catch (error) {
