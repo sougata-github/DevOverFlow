@@ -69,9 +69,9 @@ export async function deleteUser(params: DeleteUserParams) {
 
     // if found then we have to delete the user and all his existing ties from the database
 
-    const userQuestionIds = await Question.find({ author: user._id }).distinct(
-      "_id"
-    );
+    // const userQuestionIds = await Question.find({ author: user._id }).distinct(
+    //   "_id"
+    // );
 
     // delete the user's questions
 
