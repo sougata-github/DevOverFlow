@@ -8,6 +8,14 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "*",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
