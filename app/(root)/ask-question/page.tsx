@@ -1,12 +1,10 @@
 import Question from "@/components/forms/Question";
 import { getUserById } from "@/lib/actions/user.actions";
-// import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 const Page = async () => {
-  // const { userId } = auth();
-
-  const userId = "12345";
+  const { userId } = auth();
 
   if (!userId) {
     redirect("/sign-in");
