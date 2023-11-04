@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { Badge } from "../ui/badge";
 
 interface Props {
@@ -18,7 +17,6 @@ const RenderTags = ({ _id, name, totalQuestions, showCount }: Props) => {
       >
         {name}
       </Badge>
-
       {showCount && (
         <p className="small-medium text-dark500_light700">{totalQuestions}</p>
       )}
