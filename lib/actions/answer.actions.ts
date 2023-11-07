@@ -12,8 +12,9 @@ export async function createAnswer(params: CreateAnswerParams) {
 
     const { content, author, question, path } = params;
 
-    const newAnswer = new Answer({ content, author, question });
+    const newAnswer = await Answer.create({ content, author, question });
 
+    console.log({ newAnswer });
     // Add the answer to the Question's answer's array
     await Question.findByIdAndUpdate(question, {
       $push: { answers: newAnswer._id },
