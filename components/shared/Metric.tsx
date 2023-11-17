@@ -38,7 +38,7 @@ const Metric = ({
               isAuthor ? "max-sm:hidden" : ""
             }`}
           >
-            {title}
+            {Number(value) > 1 ? `${title}s` : `${title}`}
           </span>
         </p>
       </>
