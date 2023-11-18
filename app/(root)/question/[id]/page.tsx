@@ -82,6 +82,7 @@ const Page = async ({ params }: any) => {
           textStyles="small-medium text-dark400_light800"
         />
       </div>
+
       <ParseHTML data={result.content} />
 
       <div className="mt-8 flex flex-wrap gap-2">
