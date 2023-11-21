@@ -12,7 +12,7 @@ interface Props {
     name: string;
   }[];
   author: {
-    _id: string;
+    clerkId: string;
     name: string;
     picture: string;
   };
@@ -58,7 +58,7 @@ const QuestionCard = ({
           alt="user"
           value={author.name}
           title={`- asked ${getTimeStamp(createdAt)}`}
-          href={`/profile/${author._id}`}
+          href={`/profile/${author.clerkId}`}
           textStyles="body-medium text-dark400_light700"
         />
         <div className="mt-1 flex gap-4 py-2">
