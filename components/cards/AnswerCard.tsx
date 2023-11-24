@@ -29,7 +29,7 @@ const AnswerCard = ({
   createdAt,
 }: Props) => {
   return (
-    <div className="card-wrapper rounded-[10px] px-9 py-11 ">
+    <div className="card-wrapper mt-2 rounded-[10px] px-9 py-11">
       <Link href={`/question/${question._id}/#${_id}`}>
         <div className="flex flex-col-reverse items-start justify-between gap-5 sm:flex-row">
           <div>
