@@ -4,8 +4,11 @@ import Question from "@/database/question.model";
 import { connectToDatabase } from "../mongoose";
 import Tag from "@/database/tag.model";
 import User from "@/database/user.model";
+import Answer from "@/database/answer.model";
+import Interaction from "@/database/interaction.model";
 import {
   CreateQuestionParams,
+  DeleteQuestionParams,
   GetQuestionByIdParams,
   GetQuestionsParams,
   QuestionVoteParams,
@@ -161,5 +164,28 @@ export async function downvoteQuestion(params: QuestionVoteParams) {
   } catch (error) {
     console.log(error);
     throw error;
+  }
+}
+
+export async function deleteQuestion(params: DeleteQuestionParams) {
+  try {
+    connectToDatabase();
+
+    const { questionId, path } = params;
+
+    await Question.deleteOne({ _id: questionId });
+    // delete all answers related
+    await Answer.deleteMany({ question: questionId });
+    // delete all interactions related to the question
+    await Interaction.deleteMany({ question: questionId });
+    // update tags to no longer iclude the references to the deleted question
+    await Tag.updateMany(
+      { questions: questionId },
+      { $pull: { questions: questionId } }
+    );
+
+    revalidatePath(path);
+  } catch (error) {
+    console.log(error);
   }
 }
