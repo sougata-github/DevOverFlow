@@ -17,7 +17,7 @@ const Page = async ({ params, searchParams }: URLProps) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse items-start justify-between sm:flex-row">
+      <div className="flex flex-col items-start justify-between sm:flex-row">
         <div className="flex flex-col items-start justify-between gap-4 lg:flex-row">
           <Image
             src={userInfo?.user.picture}
@@ -66,7 +66,7 @@ const Page = async ({ params, searchParams }: URLProps) => {
           </div>
         </div>
 
-        <div className="flex justify-end max-sm:w-full sm:mt-3 ">
+        <div className="mt-5 flex justify-start max-sm:w-full sm:mt-3">
           <SignedIn>
             {clerkId === userInfo.user.clerkId && (
               <Link href="/profile/edit">
