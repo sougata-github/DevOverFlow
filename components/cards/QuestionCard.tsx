@@ -63,7 +63,7 @@ const QuestionCard = ({
           <RenderTags key={tag._id} _id={tag._id} name={tag.name} />
         ))}
       </div>
-      <div className="mt-6 flex w-full flex-wrap justify-between ">
+      <div className="flex-between mt-6 w-full flex-wrap gap-3 ">
         <Metric
           imgUrl={author.picture}
           alt="user"
@@ -72,7 +72,7 @@ const QuestionCard = ({
           href={`/profile/${author.clerkId}`}
           textStyles="body-medium text-dark400_light700"
         />
-        <div className="mt-1 flex gap-4 py-2 ">
+        <div className="flex items-center gap-3 max-sm:flex-wrap max-sm:justify-start">
           <Metric
             imgUrl="/assets/icons/like.svg"
             alt="Upvotes"
