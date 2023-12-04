@@ -72,7 +72,7 @@ const QuestionCard = ({
           href={`/profile/${author.clerkId}`}
           textStyles="body-medium text-dark400_light700"
         />
-        <div className="mt-1 flex gap-4 py-2 max-sm:px-2">
+        <div className="mt-1 flex gap-4 py-2 ">
           <Metric
             imgUrl="/assets/icons/like.svg"
             alt="Upvotes"
