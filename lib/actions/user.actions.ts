@@ -6,7 +6,6 @@ import {
   CreateUserParams,
   DeleteUserParams,
   GetAllUsersParams,
-  GetQuestionsParams,
   GetSavedQuestionsParams,
   GetUserByIdParams,
   GetUserStatsParams,
@@ -98,8 +97,22 @@ export async function deleteUser(params: DeleteUserParams) {
 export async function getAllUsers(params: GetAllUsersParams) {
   try {
     connectToDatabase();
-    // const { page = 1, pageSize = 20, filter, searchQuery } = params;
-    const users = await User.find({}).sort({ createdAt: -1 });
+    const { searchQuery } = params;
+
+    const query: FilterQuery<typeof User> = {};
+
+    if (searchQuery) {
+      query.$or = [
+        {
+          name: { $regex: new RegExp(searchQuery, "i") },
+        },
+        {
+          username: { $regex: new RegExp(searchQuery, "i") },
+        },
+      ];
+    }
+
+    const users = await User.find(query).sort({ createdAt: -1 });
     return { users };
   } catch (error) {
     console.log(error);
