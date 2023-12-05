@@ -31,6 +31,7 @@
     "next": "13.5",
     "prettier": "^3.0.3",
     "prismjs": "^1.29.0",
+    "query-string": "^8.1.0",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "^7.47.0",
