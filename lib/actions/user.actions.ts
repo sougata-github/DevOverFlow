@@ -201,7 +201,7 @@ export async function getSavedQuestions(params: GetSavedQuestionsParams) {
         sortOptions = { createdAt: -1 };
         break;
       case "oldest":
-        sortOptions = { created: 1 };
+        sortOptions = { createdAt: 1 };
         break;
       default:
         break;
