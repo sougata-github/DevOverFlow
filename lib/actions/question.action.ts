@@ -21,7 +21,10 @@ export async function getQuestions(params: GetQuestionsParams) {
   try {
     connectToDatabase();
 
-    const { searchQuery, filter } = params;
+    const { searchQuery, filter, page = 1, pageSize = 20 } = params;
+
+    // calculate the number of posts to skip based on the page number and page size
+    const skipAmount = (page - 1) * pageSize;
 
     const query: FilterQuery<typeof Question> = {};
 
@@ -52,12 +55,18 @@ export async function getQuestions(params: GetQuestionsParams) {
         break;
     }
 
+    const totalQuestions = await Question.countDocuments(query);
+
     const questions = await Question.find(query)
       .populate({ path: "tags", model: Tag }) // we have id of the tag, this is to get the tag's name i.e it's value.
       .populate({ path: "author", model: User })
+      .skip(skipAmount)
+      .limit(pageSize)
       .sort(sortOptions);
 
-    return { questions };
+    const isNext = totalQuestions > skipAmount + questions.length;
+
+    return { questions, isNext };
   } catch (error) {
     console.log(error);
     throw error;
