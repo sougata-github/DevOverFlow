@@ -21,7 +21,6 @@ const Navbar = () => {
         </p>
       </Link>
       <GlobalSearch />
-      {/* this will only show when user is logged in. */}
       <div className="flex-between gap-5">
         <Theme />
         <SignedIn>
