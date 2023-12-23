@@ -18,6 +18,7 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { createAnswer } from "@/lib/actions/answer.actions";
 import { usePathname } from "next/navigation";
+import { toast } from "../ui/use-toast";
 
 interface Props {
   question: string;
@@ -54,6 +55,11 @@ const Answer = ({ question, questionId, authorId }: Props) => {
         const editor = editorRef.current as any;
         editor.setContent(" ");
       }
+
+      toast({
+        title: "Answer submitted",
+        variant: "default",
+      });
     } catch (error) {
       console.log(error);
     } finally {
@@ -86,8 +92,6 @@ const Answer = ({ question, questionId, authorId }: Props) => {
         const editor = editorRef.current as any;
         editor.setContent(formattedAnswer);
       }
-
-      // Toast notif...
     } catch (error) {
       console.log(error);
     } finally {
