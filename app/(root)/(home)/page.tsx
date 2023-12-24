@@ -8,7 +8,12 @@ import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
 import { getQuestions } from "@/lib/actions/question.action";
 import { SearchParamsProps } from "@/types";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Home | DevOverFlow",
+};
 
 export default async function Home({ searchParams }: SearchParamsProps) {
   const result = await getQuestions({
