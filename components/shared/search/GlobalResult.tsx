@@ -53,7 +53,7 @@ const GlobalResult = () => {
       case "user":
         return `/profile/${id}`;
       case "tag":
-        return `/tag/${id}`;
+        return `/tags/${id}`;
       default:
         return `/`;
     }
