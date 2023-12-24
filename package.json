@@ -31,6 +31,7 @@
     "mongodb": "^6.2.0",
     "mongoose": "^7.6.3",
     "next": "13.5",
+    "next-themes": "^0.2.1",
     "prettier": "^3.0.3",
     "prismjs": "^1.29.0",
     "query-string": "^8.1.0",

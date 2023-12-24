@@ -22,7 +22,7 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 
 import { editQuestion, createQuestion } from "@/lib/actions/question.action";
-import { useTheme } from "@/context/ThemeProvider";
+import { useTheme } from "next-themes";
 
 interface Props {
   type?: string;
@@ -31,7 +31,7 @@ interface Props {
 }
 
 const Question = ({ mongoUserId, type, questionDetails }: Props) => {
-  const { mode } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -155,6 +155,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
               </FormLabel>
               <FormControl className="mt-3.5">
                 <Editor
+                  key={resolvedTheme}
                   apiKey={process.env.NEXT_PUBLIC_TINY_EDITOR_API_KEY}
                   onInit={(evt, editor) =>
                     // @ts-ignore
@@ -189,8 +190,8 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                       "alignright alignjustify | bullist numlist outdent indent | ",
                     content_style:
                       "body { font-family:Inter,Helvetica,sans-serif; font-size:16px }",
-                    skin: mode === "dark" ? "oxide-dark" : "oxide",
-                    content_css: mode === "dark" ? "dark" : "light",
+                    skin: resolvedTheme === "dark" ? "oxide-dark" : "oxide",
+                    content_css: resolvedTheme === "dark" ? "dark" : "light",
                   }}
                 />
               </FormControl>

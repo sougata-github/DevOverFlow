@@ -13,7 +13,7 @@ import { AnswerSchema } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Editor } from "@tinymce/tinymce-react";
 import { useRef, useState } from "react";
-import { useTheme } from "@/context/ThemeProvider";
+import { useTheme } from "next-themes";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { createAnswer } from "@/lib/actions/answer.actions";
@@ -31,7 +31,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmittingAI, setIsSubmittingAI] = useState(false);
   const editorRef = useRef(null);
-  const { mode } = useTheme();
+  const { resolvedTheme } = useTheme();
   const form = useForm<z.infer<typeof AnswerSchema>>({
     resolver: zodResolver(AnswerSchema),
     defaultValues: {
@@ -139,6 +139,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
               <FormItem className="flex w-full flex-col gap-3">
                 <FormControl className="mt-3.5">
                   <Editor
+                    key={resolvedTheme}
                     apiKey={process.env.NEXT_PUBLIC_TINY_EDITOR_API_KEY}
                     onInit={(evt, editor) =>
                       // @ts-ignore
@@ -172,8 +173,8 @@ const Answer = ({ question, questionId, authorId }: Props) => {
                         "alignright alignjustify | bullist numlist outdent indent | ",
                       content_style:
                         "body { font-family:Inter,Helvetica,sans-serif; font-size:16px }",
-                      skin: mode === "dark" ? "oxide-dark" : "oxide",
-                      content_css: mode === "dark" ? "dark" : "light",
+                      skin: resolvedTheme === "dark" ? "oxide-dark" : "oxide",
+                      content_css: resolvedTheme === "dark" ? "dark" : "light",
                     }}
                   />
                 </FormControl>
