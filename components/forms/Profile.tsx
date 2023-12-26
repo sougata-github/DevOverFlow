@@ -173,9 +173,6 @@ const Profile = ({ clerkId, user }: Props) => {
             </FormItem>
           )}
         />
-
-        <div className="mt-7 flex justify-end "></div>
-
         <Button
           type="submit"
           disabled={isSubmitting}

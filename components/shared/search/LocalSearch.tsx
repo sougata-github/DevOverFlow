@@ -53,7 +53,7 @@ const LocalSearch = ({
 
   return (
     <div
-      className={`background-light800_darkgradient relative flex min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 ${otherClasses} `}
+      className={`relative flex min-h-[56px] grow items-center gap-4 rounded-[10px]  px-4 ${otherClasses} background-light800_darkgradient`}
     >
       {iconPosition === "left" && (
         <Image
@@ -73,7 +73,7 @@ const LocalSearch = ({
         }}
         placeholder={placeholder}
         className="paragraph-regular no-focus 
-          background-light800_darkgradient placeholder text-dark300_light700 border-none shadow-none outline-none "
+          placeholder text-dark400_light700  border-none bg-transparent shadow-none outline-none "
       />
 
       {iconPosition === "right" && (
