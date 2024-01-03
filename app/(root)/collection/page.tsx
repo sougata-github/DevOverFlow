@@ -10,7 +10,7 @@ import { auth } from "@clerk/nextjs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Collection | DevOverFlow",
+  title: "Saved Questions | DevOverFlow",
 };
 
 export default async function Home({ searchParams }: SearchParamsProps) {
@@ -40,7 +40,6 @@ export default async function Home({ searchParams }: SearchParamsProps) {
         <Filter
           filters={QuestionFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
-          containerClasses="hidden max-md:flex"
         />
       </div>
 
