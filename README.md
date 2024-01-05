@@ -45,9 +45,7 @@ Additionally, the app is fully responsive, has seamless pagination across all pa
 
 The project follows an organized file and folder structure, adhering to best practices.
 
-## Learnings
-
-The project spanned almost 3 months, providing invaluable insights into NextJS features like:
+## NextJS features:
 
 - Routing and Navigation.
 - Metadata.
