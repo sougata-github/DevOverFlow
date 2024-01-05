@@ -22,7 +22,7 @@
 - View, search jobs or filter by location.
 - Light and Dark Mode.
 
-Additionally, the app is fully responsive, has seamless pagination across all pages for a convenient user experience.
+Additionally, the app is fully responsive and has seamless pagination across all pages for a convenient user experience.
 
 ## Tech Stack
 
