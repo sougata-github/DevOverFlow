@@ -43,7 +43,7 @@ Additionally, the app is fully responsive, has seamless pagination across all pa
 
 ## Project Organization and Best Practices
 
-The project follows an organized file and folder structure, adhering to best practices for web development.
+The project follows an organized file and folder structure, adhering to best practices.
 
 ## Learnings
 
