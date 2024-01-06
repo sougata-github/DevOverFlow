@@ -22,8 +22,6 @@
 - View, search jobs or filter by location.
 - Light and Dark Mode.
 
-Additionally, the app is fully responsive and has seamless pagination across all pages for a convenient user experience.
-
 ## Tech Stack
 
 - NextJS 14
@@ -40,8 +38,6 @@ Additionally, the app is fully responsive and has seamless pagination across all
 - OpenAi API for generating AI answers
 - JSearch API for job searching
 - Vercel for deployment
-
-The project follows an organized file and folder structure, adhering to best practices.
 
 ## Getting Started
 
