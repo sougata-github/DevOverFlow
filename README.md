@@ -41,20 +41,7 @@ Additionally, the app is fully responsive and has seamless pagination across all
 - JSearch API for job searching
 - Vercel for deployment
 
-## Project Organization and Best Practices
-
 The project follows an organized file and folder structure, adhering to best practices.
-
-## NextJS features:
-
-- Routing and Navigation.
-- Metadata.
-- Styling with Tailwind.
-- Client vs. Server components.
-- NextJS Image component.
-- SSR, SSG, and ISR.
-- Server actions, caching, and authentication.
-- Production build and deployment.
 
 ## Getting Started
 
