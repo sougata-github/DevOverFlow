@@ -37,6 +37,7 @@
 - React Icons
 - Zod for Form validation
 - TinyMCE for the editor
+- Query String
 - Next themes for theme management
 - OpenAi API for generating AI answers
 - JSearch API for job searching
