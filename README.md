@@ -30,6 +30,7 @@
 - TypeScript
 - Tailwind CSS
 - MongoDB
+- Mongoose
 - Clerk for Authentication
 - Shadcn UI for reusable components
 - PrismJS for syntax highlighting
