@@ -330,7 +330,7 @@ export async function getUserInfo(params: GetUserByIdParams) {
         count: questionUpvotes?.totalUpvotes || 0,
       },
       {
-        type: "ANSWER_COUNT" as BadgeCriteriaType,
+        type: "ANSWER_UPVOTES" as BadgeCriteriaType,
         count: answerUpvotes?.totalUpvotes || 0,
       },
       {
