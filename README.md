@@ -12,7 +12,6 @@
 
 - Ask questions and answer questions.
 - Upvote, Downvote, and save questions.
-- Generate AI answers.
 - Include code snippets in your answers.
 - Searching and filtering.
 - View Top Questions and Popular Tags.
@@ -39,6 +38,5 @@
 - TinyMCE for the editor
 - Query String
 - Next themes for theme management
-- OpenAi API for generating AI answers
 - JSearch API for job searching
 - Vercel for deployment
