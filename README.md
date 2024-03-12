@@ -2,9 +2,8 @@
 
 <p>A community-driven Q&A platform tailored for programming enthusiasts.</p>
 
-## Preview of live site
-![Screenshot (108)](https://github.com/sougata-github/DevOverFlow/assets/102734212/fc74b604-2233-469c-a855-e066c56c0ea1)
-![Screenshot (107)](https://github.com/sougata-github/DevOverFlow/assets/102734212/deeae3f6-5c1a-4a2c-b566-ecc2d1aec265)
+![DevOverFlow](https://github.com/sougata-github/DevOverFlow/assets/102734212/201f7b4d-5ff9-4a7f-9b53-cf74e36d8eb9)
+
 
 
 
