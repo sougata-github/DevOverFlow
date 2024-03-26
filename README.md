@@ -2,17 +2,13 @@
 
 <p>A community-driven Q&A platform tailored for programming enthusiasts.</p>
 
-## Preview of live site
-![Screenshot (108)](https://github.com/sougata-github/DevOverFlow/assets/102734212/fc74b604-2233-469c-a855-e066c56c0ea1)
-![Screenshot (107)](https://github.com/sougata-github/DevOverFlow/assets/102734212/deeae3f6-5c1a-4a2c-b566-ecc2d1aec265)
-
+![screenshot](https://github.com/sougata-github/DevOverFlow/assets/102734212/c236faff-f618-488f-bd1a-507b57106764)
 
 
 ## Key Features
 
 - Ask questions and answer questions.
 - Upvote, Downvote, and save questions.
-- Generate AI answers.
 - Include code snippets in your answers.
 - Searching and filtering.
 - View Top Questions and Popular Tags.
@@ -39,6 +35,5 @@
 - TinyMCE for the editor
 - Query String
 - Next themes for theme management
-- OpenAi API for generating AI answers
 - JSearch API for job searching
 - Vercel for deployment
