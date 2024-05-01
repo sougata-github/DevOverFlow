@@ -2,11 +2,16 @@
 
 <p>A community-driven Q&A platform tailored for programming enthusiasts.</p>
 
-## Preview of live site
+## Preview 
+### Home
 ![Screenshot (135)](https://github.com/sougata-github/DevOverFlow/assets/102734212/bacbe7f8-ddf1-4ac9-8a6c-e9e7b83338a5)
+### Community
 ![Screenshot (136)](https://github.com/sougata-github/DevOverFlow/assets/102734212/7c819a7e-1035-468c-b775-9c945b0d8011)
+### Jobs
 ![Screenshot (137)](https://github.com/sougata-github/DevOverFlow/assets/102734212/cf9627cd-624e-48a0-9923-c690448aac4a)
+### Profile
 ![Screenshot (138)](https://github.com/sougata-github/DevOverFlow/assets/102734212/4ee56d23-d339-4fcb-a0f5-96b8c682a329)
+### Ask a question
 ![Screenshot (139)](https://github.com/sougata-github/DevOverFlow/assets/102734212/96af161c-0791-4597-91cd-57759e27f59e)
 
 ## Key Features
