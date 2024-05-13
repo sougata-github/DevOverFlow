@@ -31,7 +31,7 @@
 
 ## Tech Stack
 
-- NextJS 14
+- Next.js 14
 - TypeScript
 - Tailwind CSS
 - MongoDB
