@@ -2,11 +2,13 @@ import JobCard from "@/components/cards/JobCard";
 import JobFilters from "@/components/shared/JobFilters";
 import Pagination from "@/components/shared/Pagination";
 import LocalSearch from "@/components/shared/search/LocalSearch";
+
 import {
   fetchCountries,
   fetchJobs,
   fetchLocation,
 } from "@/lib/actions/job.action";
+
 import { Job } from "@/types";
 
 import type { Metadata } from "next";

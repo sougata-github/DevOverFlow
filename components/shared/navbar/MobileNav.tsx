@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/sheet";
 import { sidebarLinks } from "@/constants";
 import { SignedOut } from "@clerk/nextjs";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -53,17 +54,11 @@ const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Image
-          src="/assets/icons/hamburger.svg"
-          width={36}
-          height={36}
-          alt="Menu"
-          className="invert-colors cursor-pointer sm:hidden"
-        />
+        <Menu className="h-6 w-6 cursor-pointer text-black sm:hidden dark:text-white " />
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="background-light900_dark200 custom-scrollbar overflow-y-auto border-none "
+        className="background-light900_dark200 scrollbar-hidden overflow-y-auto border-none "
       >
         <Link href="/" className="flex items-center gap-1">
           <Image
