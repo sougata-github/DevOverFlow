@@ -1,9 +1,12 @@
 "use client";
-import { Input } from "@/components/ui/input";
+
 import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 import Image from "next/image";
+
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+
+import { Input } from "@/components/ui/input";
 import GlobalResult from "./GlobalResult";
 
 const GlobalSearch = () => {
