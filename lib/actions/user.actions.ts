@@ -140,6 +140,7 @@ export async function getAllUsers(params: GetAllUsersParams) {
       .sort(sortOptions);
 
     const isNext = totalUsers > skipAmount + users.length;
+    // const isNext = Math.ceil(totalUsers / pageSize) !== page;
 
     return { users, isNext };
   } catch (error) {

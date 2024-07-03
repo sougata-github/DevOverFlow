@@ -111,7 +111,6 @@ export async function createQuestion(params: CreateQuestionParams) {
     });
 
     // Create an interaction record for user's ask-question action and then increment author's reputation by +5 for creating a question
-
     await Interaction.create({
       user: author,
       action: "ask_question",

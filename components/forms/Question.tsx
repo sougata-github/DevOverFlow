@@ -1,8 +1,12 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { QuestionsSchema } from "@/lib/validations";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { Button } from "@/components/ui/button";
+import { Badge } from "../ui/badge";
+import Image from "next/image";
 import {
   Form,
   FormControl,
@@ -13,13 +17,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+
 import { useForm } from "react-hook-form";
-import { QuestionsSchema } from "@/lib/validations";
 import React, { useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+
 import { Editor } from "@tinymce/tinymce-react";
-import { Badge } from "../ui/badge";
-import Image from "next/image";
 
 import { editQuestion, createQuestion } from "@/lib/actions/question.action";
 import { useTheme } from "next-themes";
@@ -111,7 +114,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
   }
 
   function handleTagRemove(tag: string, field: any) {
-    const newTags: [string] = field.value.filter((t: string) => t !== tag);
+    const newTags = field.value.filter((t: string) => t !== tag);
     form.setValue("tags", newTags);
   }
 
@@ -226,8 +229,8 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                       {field.value.map((tag: any) => (
                         <Badge
                           key={tag}
-                          className="subtle-medium background-light800_dark300
-                        text-light400_light500 flex items-center justify-center gap-2 rounded-md px-4 py-2 capitalize selection:border-none "
+                          className="subtle-medium background-light800_dark300 text-light400_light500
+                        flex items-center justify-center gap-2 rounded-md px-4 py-2 capitalize selection:border-none "
                           onClick={() =>
                             type !== "Edit"
                               ? handleTagRemove(tag, field)

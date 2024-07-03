@@ -26,8 +26,6 @@ export async function createAnswer(params: CreateAnswerParams) {
       $push: { answers: newAnswer._id },
     });
 
-    // TODO:  Add iteraction
-
     await Interaction.create({
       user: author,
       action: "answer",
@@ -37,7 +35,6 @@ export async function createAnswer(params: CreateAnswerParams) {
     });
 
     // Increment author's reputation
-
     await User.findByIdAndUpdate(author, { $inc: { reputation: 10 } });
 
     revalidatePath(path);
