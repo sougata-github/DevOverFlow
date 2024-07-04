@@ -80,6 +80,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
         router.push("/");
       }
     } catch (error) {
+      console.log(error);
     } finally {
       setIsSubmitting(false);
     }
