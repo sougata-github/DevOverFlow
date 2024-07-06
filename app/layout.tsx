@@ -3,7 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import React from "react";
 
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 
 import type { Metadata } from "next";
 
@@ -12,11 +12,11 @@ import "../styles/prism.css";
 
 import { Providers } from "./Providers";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-inter",
-});
+// const inter = Inter({
+//   subsets: ["latin"],
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+//   variable: "--font-inter",
+// });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -40,9 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} custom-scrollbar`}
-      >
+      <body className={`${spaceGrotesk.className} custom-scrollbar`}>
         <ClerkProvider
           appearance={{
             elements: {

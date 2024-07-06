@@ -1,15 +1,18 @@
+import Votes from "@/components/shared/Votes";
 import Answer from "@/components/forms/Answer";
-import AllAnswers from "@/components/shared/AllAnswers";
 import Metric from "@/components/shared/Metric";
 import ParseHTML from "@/components/shared/ParseHTML";
+import AllAnswers from "@/components/shared/AllAnswers";
 import RenderTags from "@/components/shared/RenderTags";
-import Votes from "@/components/shared/Votes";
-import { getQuestionById } from "@/lib/actions/question.action";
+
 import { getUserById } from "@/lib/actions/user.actions";
 import { formatNumber, getTimeStamp } from "@/lib/utils";
+import { getQuestionById } from "@/lib/actions/question.action";
+
 import { auth } from "@clerk/nextjs";
-import Image from "next/image";
+
 import Link from "next/link";
+import Image from "next/image";
 
 const Page = async ({ params, searchParams }: any) => {
   const result = await getQuestionById({ questionId: params.id });
@@ -28,7 +31,7 @@ const Page = async ({ params, searchParams }: any) => {
         <div className="flex w-full flex-col justify-between gap-5 sm:flex-row sm:items-center sm:gap-2 ">
           <Link
             href={`/profile/${result.author.clerkId}`}
-            className="flex items-center justify-start gap-1"
+            className="flex items-center justify-start gap-2"
           >
             <Image
               src={result.author.picture}

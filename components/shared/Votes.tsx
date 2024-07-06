@@ -1,17 +1,20 @@
 "use client";
 
-import { downvoteAnswer, upvoteAnswer } from "@/lib/actions/answer.actions";
-import { viewQuestion } from "@/lib/actions/interaction.action";
 import {
   downvoteQuestion,
   upvoteQuestion,
 } from "@/lib/actions/question.action";
+import { viewQuestion } from "@/lib/actions/interaction.action";
 import { toggleSaveQuestion } from "@/lib/actions/user.actions";
+import { downvoteAnswer, upvoteAnswer } from "@/lib/actions/answer.actions";
+
 import { formatNumber } from "@/lib/utils";
+
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
 
 import { useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+
 import { toast } from "../ui/use-toast";
 
 interface Props {
@@ -117,6 +120,7 @@ const Votes = ({
     viewQuestion({
       questionId: JSON.parse(itemId),
       userId: userId ? JSON.parse(userId) : undefined,
+      path: pathname,
     });
   }, [itemId, userId, pathname, router]);
 

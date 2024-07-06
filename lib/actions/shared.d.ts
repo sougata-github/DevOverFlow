@@ -44,6 +44,7 @@ export interface RecommendedParams {
 export interface ViewQuestionParams {
   questionId: string;
   userId: string | undefined;
+  path: string;
 }
 
 export interface JobFilterParams {

@@ -54,11 +54,11 @@ const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Menu className="h-6 w-6 cursor-pointer text-black sm:hidden dark:text-white " />
+        <Menu className="h-6 w-6 cursor-pointer text-black sm:hidden dark:text-white" />
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="background-light900_dark200 scrollbar-hidden overflow-y-auto border-none "
+        className="background-light900_dark200 scrollbar-hidden overflow-y-auto border-none"
       >
         <Link href="/" className="flex items-center gap-1">
           <Image
@@ -68,7 +68,7 @@ const MobileNav = () => {
             alt="DevOverFlow"
           />
           <p className="h2-bold text-dark100_light900 ml-2 font-spaceGrotesk">
-            Dev<span className="text-primary-500 ">OverFlow</span>
+            Dev<span className="text-primary-500">OverFlow</span>
           </p>
         </Link>
 

@@ -1,18 +1,18 @@
 "use server";
 
 import Question from "@/database/question.model";
+import Interaction from "@/database/interaction.model";
+
 import { connectToDatabase } from "../mongoose";
 import { ViewQuestionParams } from "./shared";
-import Interaction from "@/database/interaction.model";
+
+import { revalidatePath } from "next/cache";
 
 export async function viewQuestion(params: ViewQuestionParams) {
   try {
     await connectToDatabase();
 
-    const { questionId, userId } = params;
-
-    // update view count
-    await Question.findByIdAndUpdate(questionId, { $inc: { views: 1 } });
+    const { questionId, userId, path } = params;
 
     if (userId) {
       const existingInteraction = await Interaction.findOne({
@@ -21,8 +21,10 @@ export async function viewQuestion(params: ViewQuestionParams) {
         question: questionId,
       });
 
-      if (existingInteraction)
-        return console.log("User has already viewed this question.");
+      if (existingInteraction) return;
+
+      // update view count
+      await Question.findByIdAndUpdate(questionId, { $inc: { views: 1 } });
 
       // create interaction
       await Interaction.create({
@@ -31,6 +33,8 @@ export async function viewQuestion(params: ViewQuestionParams) {
         question: questionId,
       });
     }
+
+    revalidatePath(path);
   } catch (error) {
     console.log(error);
     throw error;

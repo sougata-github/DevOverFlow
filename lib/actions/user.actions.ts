@@ -38,7 +38,6 @@ export async function getUserById(params: GetUserByIdParams) {
 export async function createUser(userData: CreateUserParams) {
   try {
     connectToDatabase();
-
     const newUser = await User.create(userData);
     return newUser;
   } catch (error) {
@@ -50,7 +49,6 @@ export async function createUser(userData: CreateUserParams) {
 export async function updateUser(params: UpdateUserParams) {
   try {
     connectToDatabase();
-
     const { clerkId, updateData, path } = params;
 
     await User.findOneAndUpdate({ clerkId }, updateData, {
@@ -68,7 +66,6 @@ export async function updateUser(params: UpdateUserParams) {
 export async function deleteUser(params: DeleteUserParams) {
   try {
     connectToDatabase();
-
     const { clerkId } = params;
     const user = await User.findOne({ clerkId });
 
@@ -83,10 +80,10 @@ export async function deleteUser(params: DeleteUserParams) {
     // );
 
     // delete the user's questions
-
     await Question.deleteMany({ author: user._id });
 
-    // Todo: delete user answers,comments,etc
+    // Todo: delete user answers
+    await Answer.deleteMany({ author: user._id });
 
     const deletedUser = await User.findByIdAndDelete(user._id);
 
