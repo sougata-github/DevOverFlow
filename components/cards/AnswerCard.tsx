@@ -58,7 +58,7 @@ const AnswerCard = ({
           imgUrl={author.picture}
           alt="user avatar"
           value={author.name}
-          title={` • asked ${getTimeStamp(createdAt)}`}
+          title={` • answered ${getTimeStamp(createdAt)}`}
           href={`/profile/${author.clerkId}`}
           textStyles="body-medium text-dark400_light700"
           isAuthor

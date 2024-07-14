@@ -7,7 +7,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+
 import { formUrlQuery } from "@/lib/utils";
+
 import { useSearchParams, useRouter } from "next/navigation";
 
 interface Props {
@@ -42,7 +44,7 @@ const Filter = ({ filters, otherClasses, containerClasses }: Props) => {
         defaultValue={paramFilter || undefined}
       >
         <SelectTrigger
-          className={`${otherClasses} body-regular light-border background-light800_dark300 text-dark500_light700 border px-5 py-2.5`}
+          className={`${otherClasses} body-regular light-border background-light800_dark300 text-dark500_light700 cursor-pointer border px-5 py-2.5`}
         >
           <div className="line-clamp-1 flex-1 px-4 text-left">
             <SelectValue placeholder="Select a Filter" />
@@ -54,7 +56,7 @@ const Filter = ({ filters, otherClasses, containerClasses }: Props) => {
               <SelectItem
                 key={item.value}
                 value={item.value}
-                className="px-8 py-2 focus:bg-gray-100 dark:focus:bg-dark-400"
+                className="cursor-pointer px-8 py-2 focus:bg-gray-100 dark:focus:bg-dark-400"
               >
                 {item.name}
               </SelectItem>

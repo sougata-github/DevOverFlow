@@ -1,6 +1,5 @@
 "use client";
 
-import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
@@ -8,20 +7,20 @@ import {
   FormItem,
   FormMessage,
 } from "../ui/form";
+import { Button } from "../ui/button";
+import { toast } from "../ui/use-toast";
+import { Editor } from "@tinymce/tinymce-react";
+
 import { z } from "zod";
 import { AnswerSchema } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Editor } from "@tinymce/tinymce-react";
 
-import { useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
 
-import { Button } from "../ui/button";
-// import Image from "next/image";
 import { createAnswer } from "@/lib/actions/answer.actions";
-
-import { toast } from "../ui/use-toast";
 
 interface Props {
   question: string;

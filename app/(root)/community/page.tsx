@@ -1,12 +1,16 @@
-import LocalSearch from "@/components/shared/search/LocalSearch";
-import { UserFilters } from "@/constants/filters";
 import Filter from "@/components/shared/Filter";
-import { getAllUsers } from "@/lib/actions/user.actions";
-import Link from "next/link";
+import { UserFilters } from "@/constants/filters";
 import UserCard from "@/components/cards/UserCard";
-import { SearchParamsProps } from "@/types";
 import Pagination from "@/components/shared/Pagination";
+import LocalSearch from "@/components/shared/search/LocalSearch";
+
+import { getAllUsers } from "@/lib/actions/user.actions";
+
+import { SearchParamsProps } from "@/types";
+
 import type { Metadata } from "next";
+
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Community | DevOverFlow",

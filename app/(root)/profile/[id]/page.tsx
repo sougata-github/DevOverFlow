@@ -1,23 +1,29 @@
-import { Button } from "@/components/ui/button";
-import { getUserInfo } from "@/lib/actions/user.actions";
 import { URLProps } from "@/types";
+
 import { SignedIn, auth } from "@clerk/nextjs";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import { getJoinedDate } from "@/lib/utils";
-import ProfileLink from "@/components/shared/ProfileLink";
+import { getUserInfo } from "@/lib/actions/user.actions";
+
 import Stats from "@/components/shared/Stats";
-import QuestionsTab from "@/components/shared/QuestionsTab";
+import { Button } from "@/components/ui/button";
 import AnswersTab from "@/components/shared/AnswersTab";
+import ProfileLink from "@/components/shared/ProfileLink";
+import QuestionsTab from "@/components/shared/QuestionsTab";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your Profile | DevOverFlow",
+  title: "Profile | DevOverFlow",
 };
 
 const Page = async ({ params, searchParams }: URLProps) => {
   const { userId: clerkId } = auth();
+
   const userInfo = await getUserInfo({ userId: params.id });
 
   return (
@@ -90,33 +96,43 @@ const Page = async ({ params, searchParams }: URLProps) => {
         reputation={userInfo.user.reputation}
       />
       <div className="mt-10 flex gap-10">
-        <Tabs defaultValue="top-posts" className="flex-1">
-          <TabsList className="background-light800_dark400 min-h-[42px] p-1">
-            <TabsTrigger value="top-posts" className="tab">
-              Top Posts
-            </TabsTrigger>
-            <TabsTrigger value="answers" className="tab">
-              Answers
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent
-            value="top-posts"
-            className="mt-5 flex w-full flex-col gap-6"
+        {(userInfo.totalQuestions > 0 || userInfo.totalAnswers > 0) && (
+          <Tabs
+            defaultValue={userInfo.totalQuestions > 0 ? "top-posts" : "answers"}
+            className="flex-1"
           >
-            <QuestionsTab
-              searchParams={searchParams}
-              userId={userInfo.user._id}
-              clerkId={clerkId}
-            />
-          </TabsContent>
-          <TabsContent value="answers">
-            <AnswersTab
-              searchParams={searchParams}
-              userId={userInfo.user._id}
-              clerkId={clerkId}
-            />
-          </TabsContent>
-        </Tabs>
+            <TabsList className="background-light800_dark400 min-h-[42px] p-1">
+              {userInfo.totalQuestions > 0 && (
+                <TabsTrigger value="top-posts" className="tab">
+                  Top Posts
+                </TabsTrigger>
+              )}
+
+              {userInfo.totalAnswers > 0 && (
+                <TabsTrigger value="answers" className="tab">
+                  Answers
+                </TabsTrigger>
+              )}
+            </TabsList>
+            <TabsContent
+              value="top-posts"
+              className="mt-5 flex w-full flex-col gap-6"
+            >
+              <QuestionsTab
+                searchParams={searchParams}
+                userId={userInfo.user._id}
+                clerkId={clerkId}
+              />
+            </TabsContent>
+            <TabsContent value="answers">
+              <AnswersTab
+                searchParams={searchParams}
+                userId={userInfo.user._id}
+                clerkId={clerkId}
+              />
+            </TabsContent>
+          </Tabs>
+        )}
       </div>
     </>
   );

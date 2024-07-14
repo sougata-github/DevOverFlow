@@ -1,7 +1,8 @@
 "use server";
 
-import User from "@/database/user.model";
+import { FilterQuery } from "mongoose";
 import { connectToDatabase } from "../mongoose";
+
 import {
   CreateUserParams,
   DeleteUserParams,
@@ -12,13 +13,16 @@ import {
   ToggleSaveQuestionParams,
   UpdateUserParams,
 } from "./shared";
-import { revalidatePath } from "next/cache";
-import Question from "@/database/question.model";
+
 import Tag from "@/database/tag.model";
-import { FilterQuery } from "mongoose";
+import User from "@/database/user.model";
 import Answer from "@/database/answer.model";
+import Question from "@/database/question.model";
+
 import { BadgeCriteriaType } from "@/types";
 import { assignBadges } from "../utils";
+
+import { revalidatePath } from "next/cache";
 
 export async function getUserById(params: GetUserByIdParams) {
   try {
@@ -62,7 +66,6 @@ export async function updateUser(params: UpdateUserParams) {
 }
 
 // delete a user
-
 export async function deleteUser(params: DeleteUserParams) {
   try {
     connectToDatabase();
@@ -291,6 +294,7 @@ export async function getUserInfo(params: GetUserByIdParams) {
     const [answerUpvotes] = await Answer.aggregate([
       { $match: { author: user._id } },
       {
+        // reshaping the document
         $project: {
           _id: 0,
           upvotes: { $size: "$upvotes" },

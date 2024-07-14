@@ -1,5 +1,6 @@
 import { getUserQuestions } from "@/lib/actions/user.actions";
 import { SearchParamsProps } from "@/types";
+
 import QuestionCard from "../cards/QuestionCard";
 import Pagination from "./Pagination";
 

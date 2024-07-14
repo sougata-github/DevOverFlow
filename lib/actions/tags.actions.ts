@@ -1,15 +1,17 @@
 "use server";
 
-import User from "@/database/user.model";
+import { FilterQuery } from "mongoose";
 import { connectToDatabase } from "../mongoose";
+
 import {
   GetAllTagsParams,
   GetQuestionsByTagIdParams,
   GetTopInteractedTagsParams,
 } from "./shared";
-import Tag, { ITag } from "@/database/tag.model";
-import { FilterQuery } from "mongoose";
+
+import User from "@/database/user.model";
 import Question from "@/database/question.model";
+import Tag, { ITag } from "@/database/tag.model";
 import Interaction from "@/database/interaction.model";
 
 export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
@@ -93,7 +95,7 @@ export async function getAllTags(params: GetAllTagsParams) {
         break;
     }
 
-    const totalTags = await Tag.countDocuments();
+    const totalTags = await Tag.countDocuments(query);
 
     const tags = await Tag.find(query)
       .sort(sortOptions)

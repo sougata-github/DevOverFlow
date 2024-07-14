@@ -1,17 +1,20 @@
 "use server";
 
-import Answer from "@/database/answer.model";
 import { connectToDatabase } from "../mongoose";
+
 import {
   AnswerVoteParams,
   CreateAnswerParams,
   DeleteAnswerParams,
   GetAnswersParams,
 } from "./shared";
-import Question from "@/database/question.model";
-import { revalidatePath } from "next/cache";
-import Interaction from "@/database/interaction.model";
+
 import User from "@/database/user.model";
+import Answer from "@/database/answer.model";
+import Question from "@/database/question.model";
+import Interaction from "@/database/interaction.model";
+
+import { revalidatePath } from "next/cache";
 
 export async function createAnswer(params: CreateAnswerParams) {
   try {
@@ -199,7 +202,7 @@ export async function deleteAnswer(params: DeleteAnswerParams) {
       { $pull: { answers: answerId } }
     );
 
-    // delete all interactions related to the question
+    // delete all interactions related to this answer
     await Interaction.deleteMany({ answer: answerId });
 
     revalidatePath(path);
