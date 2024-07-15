@@ -49,18 +49,16 @@ const GlobalSearch = () => {
         });
         router.push(newUrl, { scroll: false });
       } else {
-        if (query) {
-          const newUrl = removeKeysFromQuery({
-            params: searchParams.toString(),
-            keysToRemove: ["global", "type"],
-          });
-          router.push(newUrl, { scroll: false });
-        }
+        const newUrl = removeKeysFromQuery({
+          params: searchParams.toString(),
+          keysToRemove: ["global", "type"],
+        });
+        router.push(newUrl, { scroll: false });
       }
     }, 300);
 
     return () => clearTimeout(delayDebounceFn);
-  }, [search, pathname, searchParams, query, router]);
+  }, [search, pathname, searchParams, router]);
 
   return (
     <div

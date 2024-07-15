@@ -1,11 +1,13 @@
 "use server";
 
-import Answer from "@/database/answer.model";
-import Question from "@/database/question.model";
+import { SearchParams } from "./shared";
+
+import { connectToDatabase } from "../mongoose";
+
 import Tag from "@/database/tag.model";
 import User from "@/database/user.model";
-import { connectToDatabase } from "../mongoose";
-import { SearchParams } from "./shared";
+import Answer from "@/database/answer.model";
+import Question from "@/database/question.model";
 
 const SearchableTypes = ["question", "answer", "user", "tag"];
 
@@ -54,6 +56,7 @@ export async function globalSearch(params: SearchParams) {
 
         results.push(
           ...queryResults.map((item) => ({
+            // reshaping the result
             title:
               type === "answer"
                 ? `Answers containing ${query}`
@@ -63,8 +66,8 @@ export async function globalSearch(params: SearchParams) {
               type === "user"
                 ? item.clerkId
                 : type === "answer"
-                ? item.question
-                : item._id,
+                  ? item.question
+                  : item._id,
           }))
         );
       }
@@ -92,8 +95,8 @@ export async function globalSearch(params: SearchParams) {
           type === "user"
             ? item.clerkId
             : type === "answer"
-            ? item.question
-            : item._id,
+              ? item.question
+              : item._id,
       }));
     }
 
