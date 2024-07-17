@@ -1,12 +1,7 @@
 "use client";
 
-import * as z from "zod";
-import { QuestionsSchema } from "@/lib/validations";
-import { zodResolver } from "@hookform/resolvers/zod";
-
-import { Button } from "@/components/ui/button";
-import { Badge } from "../ui/badge";
 import Image from "next/image";
+
 import {
   Form,
   FormControl,
@@ -16,16 +11,21 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Badge } from "../ui/badge";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Editor } from "@tinymce/tinymce-react";
 
+import * as z from "zod";
+import { QuestionsSchema } from "@/lib/validations";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { useTheme } from "next-themes";
 import { useForm } from "react-hook-form";
 import React, { useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
-import { Editor } from "@tinymce/tinymce-react";
-
 import { editQuestion, createQuestion } from "@/lib/actions/question.action";
-import { useTheme } from "next-themes";
 
 interface Props {
   type?: string;

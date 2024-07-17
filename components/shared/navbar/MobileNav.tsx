@@ -1,17 +1,23 @@
 "use client";
-import { Button } from "@/components/ui/button";
+
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { sidebarLinks } from "@/constants";
-import { SignedOut } from "@clerk/nextjs";
-import { Menu } from "lucide-react";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+
 import Link from "next/link";
+import Image from "next/image";
+
+import { sidebarLinks } from "@/constants";
+
+import { SignedOut } from "@clerk/nextjs";
+
 import { usePathname } from "next/navigation";
+
+import { Menu } from "lucide-react";
 
 const NavContent = () => {
   const pathname = usePathname();

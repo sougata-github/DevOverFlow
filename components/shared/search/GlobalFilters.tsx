@@ -1,10 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { GlobalSearchFilters } from "@/constants/filters";
-import { formUrlQuery } from "@/lib/utils";
-import { useSearchParams, useRouter } from "next/navigation";
+
 import { useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+
+import { formUrlQuery } from "@/lib/utils";
+
+import { GlobalSearchFilters } from "@/constants/filters";
 
 const GlobalFilters = () => {
   const router = useRouter();

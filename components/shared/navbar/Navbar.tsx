@@ -4,6 +4,7 @@ import Image from "next/image";
 import Theme from "./Theme";
 import MobileNav from "./MobileNav";
 import GlobalSearch from "../search/GlobalSearch";
+
 import { SignedIn, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {

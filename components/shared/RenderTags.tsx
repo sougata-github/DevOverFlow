@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import { Badge } from "../ui/badge";
 
 interface Props {

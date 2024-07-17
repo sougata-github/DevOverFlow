@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import {
   Menubar,
   MenubarContent,
@@ -8,10 +7,16 @@ import {
   MenubarTrigger,
   MenubarItem,
 } from "@/components/ui/menubar";
+
 import Image from "next/image";
+
 import { themes } from "@/constants";
+
 import { useTheme } from "next-themes";
+
 import { Loader } from "lucide-react";
+
+import React, { useEffect, useState } from "react";
 
 const Theme = () => {
   // const { mode, setMode } = useTheme();

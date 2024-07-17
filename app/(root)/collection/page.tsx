@@ -1,12 +1,17 @@
-import QuestionCard from "@/components/cards/QuestionCard";
 import Filter from "@/components/shared/Filter";
 import NoResult from "@/components/shared/NoResult";
 import Pagination from "@/components/shared/Pagination";
+import QuestionCard from "@/components/cards/QuestionCard";
 import LocalSearch from "@/components/shared/search/LocalSearch";
+
 import { QuestionFilters } from "@/constants/filters";
+
 import { getSavedQuestions } from "@/lib/actions/user.actions";
+
 import { SearchParamsProps } from "@/types";
+
 import { auth } from "@clerk/nextjs";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,11 +1,14 @@
 import { AnswerFilters } from "@/constants/filters";
-import Filter from "./Filter";
-import { getAnswers } from "@/lib/actions/answer.actions";
+
 import Link from "next/link";
 import Image from "next/image";
+
 import { getTimeStamp } from "@/lib/utils";
-import ParseHTML from "./ParseHTML";
+import { getAnswers } from "@/lib/actions/answer.actions";
+
 import Votes from "./Votes";
+import Filter from "./Filter";
+import ParseHTML from "./ParseHTML";
 import Pagination from "./Pagination";
 
 interface Props {

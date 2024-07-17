@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 import RenderTags from "./RenderTags";
 
-import { getHotQuestions } from "@/lib/actions/question.action";
 import { getTopTags } from "@/lib/actions/tags.actions";
+import { getHotQuestions } from "@/lib/actions/question.action";
 
 const RightSidebar = async () => {
   const hotQuestions = await getHotQuestions();

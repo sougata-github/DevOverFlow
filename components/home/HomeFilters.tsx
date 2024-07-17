@@ -1,8 +1,12 @@
 "use client";
-import { HomePageFilters } from "@/constants/filters";
-import React, { useState } from "react";
+
 import { Button } from "../ui/button";
+
+import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+
+import { HomePageFilters } from "@/constants/filters";
+
 import { formUrlQuery } from "@/lib/utils";
 
 const HomeFilters = () => {

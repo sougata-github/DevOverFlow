@@ -1,19 +1,25 @@
-import QuestionCard from "@/components/cards/QuestionCard";
-import HomeFilters from "@/components/home/HomeFilters";
 import Filter from "@/components/shared/Filter";
-import NoResult from "@/components/shared/NoResult";
-import Pagination from "@/components/shared/Pagination";
-import LocalSearch from "@/components/shared/search/LocalSearch";
 import { Button } from "@/components/ui/button";
-import { HomePageFilters } from "@/constants/filters";
+import NoResult from "@/components/shared/NoResult";
+import HomeFilters from "@/components/home/HomeFilters";
+import Pagination from "@/components/shared/Pagination";
+import QuestionCard from "@/components/cards/QuestionCard";
+import LocalSearch from "@/components/shared/search/LocalSearch";
+
 import {
   getQuestions,
   getRecommendedQuestions,
 } from "@/lib/actions/question.action";
-import { SearchParamsProps } from "@/types";
+
 import { auth } from "@clerk/nextjs";
-import type { Metadata } from "next";
+
 import Link from "next/link";
+
+import type { Metadata } from "next";
+
+import { SearchParamsProps } from "@/types";
+
+import { HomePageFilters } from "@/constants/filters";
 
 export const metadata: Metadata = {
   title: "Home | DevOverFlow",

@@ -3,8 +3,9 @@
 import Question from "@/database/question.model";
 import Interaction from "@/database/interaction.model";
 
-import { connectToDatabase } from "../mongoose";
 import { ViewQuestionParams } from "./shared";
+
+import { connectToDatabase } from "../mongoose";
 
 import { revalidatePath } from "next/cache";
 

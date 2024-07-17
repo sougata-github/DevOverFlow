@@ -1,8 +1,10 @@
 import Link from "next/link";
 
-import Metric from "../shared/Metric";
-import { formatNumber, getTimeStamp } from "@/lib/utils";
 import { SignedIn } from "@clerk/nextjs";
+
+import { formatNumber, getTimeStamp } from "@/lib/utils";
+
+import Metric from "../shared/Metric";
 import EditDeleteAction from "../shared/EditDeleteAction";
 
 interface Props {

@@ -1,10 +1,12 @@
-import React from "react";
 import Link from "next/link";
-import RenderTags from "../shared/RenderTags";
+
 import Metric from "../shared/Metric";
-import { formatNumber, getTimeStamp } from "@/lib/utils";
-import { SignedIn } from "@clerk/nextjs";
+import RenderTags from "../shared/RenderTags";
 import EditDeleteAction from "../shared/EditDeleteAction";
+
+import { SignedIn } from "@clerk/nextjs";
+
+import { formatNumber, getTimeStamp } from "@/lib/utils";
 
 interface Props {
   clerkId?: string | null;

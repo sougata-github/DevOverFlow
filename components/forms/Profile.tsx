@@ -1,9 +1,5 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -12,12 +8,20 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
-import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+import * as z from "zod";
 import { ProfileSchema } from "@/lib/validations";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { usePathname, useRouter } from "next/navigation";
+
 import { updateUser } from "@/lib/actions/user.actions";
+
 import { toast } from "../ui/use-toast";
 
 interface Props {

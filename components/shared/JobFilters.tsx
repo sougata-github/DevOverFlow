@@ -9,12 +9,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { formUrlQuery } from "@/lib/utils";
 import Image from "next/image";
 
-import { useRouter, useSearchParams } from "next/navigation";
-
 import { Country } from "@/types";
+
+import { formUrlQuery } from "@/lib/utils";
+
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface JobsFilterProps {
   countriesList: Country[];

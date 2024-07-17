@@ -1,8 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
 import Image from "next/image";
+
 import { Input } from "@/components/ui/input";
+
+import React, { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
 import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 
 interface CustomInputProps {

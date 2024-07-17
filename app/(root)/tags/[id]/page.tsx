@@ -1,8 +1,10 @@
-import QuestionCard from "@/components/cards/QuestionCard";
 import NoResult from "@/components/shared/NoResult";
 import Pagination from "@/components/shared/Pagination";
+import QuestionCard from "@/components/cards/QuestionCard";
 import LocalSearch from "@/components/shared/search/LocalSearch";
+
 import { getQuestionsByTagId } from "@/lib/actions/tags.actions";
+
 import { URLProps } from "@/types";
 
 const Page = async ({ params, searchParams }: URLProps) => {

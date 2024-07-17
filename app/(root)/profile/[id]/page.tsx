@@ -2,8 +2,8 @@ import { URLProps } from "@/types";
 
 import { SignedIn, auth } from "@clerk/nextjs";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 import { getJoinedDate } from "@/lib/utils";
 import { getUserInfo } from "@/lib/actions/user.actions";

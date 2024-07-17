@@ -1,11 +1,15 @@
 "use server";
 
-import Question from "@/database/question.model";
+import { FilterQuery } from "mongoose";
+
 import { connectToDatabase } from "../mongoose";
+
 import Tag from "@/database/tag.model";
 import User from "@/database/user.model";
 import Answer from "@/database/answer.model";
+import Question from "@/database/question.model";
 import Interaction from "@/database/interaction.model";
+
 import {
   CreateQuestionParams,
   DeleteQuestionParams,
@@ -15,8 +19,8 @@ import {
   QuestionVoteParams,
   RecommendedParams,
 } from "./shared";
+
 import { revalidatePath } from "next/cache";
-import { FilterQuery } from "mongoose";
 
 export async function getQuestions(params: GetQuestionsParams) {
   try {

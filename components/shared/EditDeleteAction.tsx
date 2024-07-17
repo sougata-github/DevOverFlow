@@ -2,8 +2,11 @@
 
 import { deleteAnswer } from "@/lib/actions/answer.actions";
 import { deleteQuestion } from "@/lib/actions/question.action";
+
 import Image from "next/image";
+
 import { usePathname, useRouter } from "next/navigation";
+
 import { toast } from "../ui/use-toast";
 
 interface Props {
