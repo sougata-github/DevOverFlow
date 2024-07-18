@@ -71,7 +71,7 @@ const AllAnswers = async ({
                     </div>
                   </Link>
                 </div>
-                <div className="flex ">
+                <div className="flex">
                   <Votes
                     type="Answer"
                     itemId={JSON.stringify(answer._id)}
