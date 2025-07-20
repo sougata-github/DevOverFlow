@@ -1,10 +1,8 @@
+import { processJobTitle } from "@/lib/utils";
+import Image from "next/image";
 /* eslint-disable camelcase */
 import { Job } from "@/types";
-
 import Link from "next/link";
-import Image from "next/image";
-
-import { processJobTitle } from "@/lib/utils";
 
 interface JobLocationProps {
   job_country?: string;
@@ -62,7 +60,7 @@ const JobCard = ({ job }: { job: Job }) => {
         {employer_logo ? (
           <Link
             href={employer_website ?? "/jobs"}
-            className="background-light800_dark400 relative h-16 w-16 rounded-xl"
+            className="background-light800_dark400 relative size-8 rounded-xl"
           >
             <Image
               src={employer_logo}
@@ -75,8 +73,8 @@ const JobCard = ({ job }: { job: Job }) => {
           <Image
             src="/assets/images/site-logo.svg"
             alt="default site logo"
-            width={64}
-            height={64}
+            width={32}
+            height={32}
             className="rounded-[10px]"
           />
         )}

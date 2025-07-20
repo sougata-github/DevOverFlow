@@ -1,12 +1,12 @@
-import Filter from "@/components/shared/Filter";
-import NoResult from "@/components/shared/NoResult";
 import LocalSearch from "@/components/shared/search/LocalSearch";
-import { TagFilters } from "@/constants/filters";
-import { getAllTags } from "@/lib/actions/tags.actions";
-import Link from "next/link";
-import { SearchParamsProps } from "@/types";
 import Pagination from "@/components/shared/Pagination";
+import { getAllTags } from "@/lib/actions/tags.actions";
+import NoResult from "@/components/shared/NoResult";
+import { TagFilters } from "@/constants/filters";
+import Filter from "@/components/shared/Filter";
+import { SearchParamsProps } from "@/types";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tags | DevOverFlow",
@@ -35,12 +35,12 @@ const Page = async ({ searchParams }: SearchParamsProps) => {
         />
       </div>
 
-      <section className="mt-12 flex flex-wrap gap-4">
+      <section className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {results.tags.length > 0 ? (
           results.tags.map((tag) => (
             <Link href={`tags/${tag._id}`} key={tag._id}>
               <article className="background-light900_dark200 light-border flex w-full flex-col rounded-2xl border px-8 py-10 sm:w-[260px]">
-                <div className="background-light800_dark400 w-fit rounded-sm px-5 py-1.5 ">
+                <div className="background-light800_dark400 w-fit rounded-lg px-5 py-1.5 ">
                   <p className="paragraph-semibold text-dark300_light900">
                     {tag.name}
                   </p>

@@ -1,16 +1,14 @@
+import "../styles/prism.css";
+import "./globals.css";
+
+import { ClerkProvider } from "@clerk/nextjs";
+// eslint-disable-next-line camelcase
+import { DM_Sans } from "next/font/google";
+import type { Metadata } from "next";
 /* eslint-disable camelcase */
 import React from "react";
 
-import "./globals.css";
-import "../styles/prism.css";
-
 import { Providers } from "./Providers";
-
-import { ClerkProvider } from "@clerk/nextjs";
-
-import type { Metadata } from "next";
-
-import { Space_Grotesk } from "next/font/google";
 
 // const inter = Inter({
 //   subsets: ["latin"],
@@ -18,7 +16,7 @@ import { Space_Grotesk } from "next/font/google";
 //   variable: "--font-inter",
 // });
 
-const spaceGrotesk = Space_Grotesk({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-spaceGrotesk ",
@@ -40,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.className} custom-scrollbar`}>
+      <body className={`${dmSans.className} custom-scrollbar`}>
         <ClerkProvider
           appearance={{
             elements: {

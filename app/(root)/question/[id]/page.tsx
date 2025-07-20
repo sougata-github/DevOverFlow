@@ -1,18 +1,15 @@
-import Votes from "@/components/shared/Votes";
-import Answer from "@/components/forms/Answer";
-import Metric from "@/components/shared/Metric";
-import ParseHTML from "@/components/shared/ParseHTML";
-import AllAnswers from "@/components/shared/AllAnswers";
-import RenderTags from "@/components/shared/RenderTags";
-
+import { getQuestionById } from "@/lib/actions/question.action";
 import { getUserById } from "@/lib/actions/user.actions";
 import { formatNumber, getTimeStamp } from "@/lib/utils";
-import { getQuestionById } from "@/lib/actions/question.action";
-
+import RenderTags from "@/components/shared/RenderTags";
+import AllAnswers from "@/components/shared/AllAnswers";
+import ParseHTML from "@/components/shared/ParseHTML";
+import Metric from "@/components/shared/Metric";
+import Answer from "@/components/forms/Answer";
+import Votes from "@/components/shared/Votes";
 import { auth } from "@clerk/nextjs";
-
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const Page = async ({ params, searchParams }: any) => {
   const result = await getQuestionById({ questionId: params.id });
@@ -28,7 +25,7 @@ const Page = async ({ params, searchParams }: any) => {
   return (
     <>
       <div className="flex-start w-full flex-col">
-        <div className="flex w-full flex-col justify-between gap-5 sm:flex-row sm:items-center sm:gap-2 ">
+        <div className="flex w-full flex-col justify-between gap-5 sm:flex-row sm:items-center sm:gap-2">
           <Link
             href={`/profile/${result.author.clerkId}`}
             className="flex items-center justify-start gap-2"

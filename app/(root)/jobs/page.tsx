@@ -1,17 +1,14 @@
-import JobCard from "@/components/cards/JobCard";
-import JobFilters from "@/components/shared/JobFilters";
-import Pagination from "@/components/shared/Pagination";
-import LocalSearch from "@/components/shared/search/LocalSearch";
-
 import {
   fetchCountries,
   fetchJobs,
   fetchLocation,
 } from "@/lib/actions/job.action";
-
-import { Job } from "@/types";
-
+import LocalSearch from "@/components/shared/search/LocalSearch";
+import Pagination from "@/components/shared/Pagination";
+import JobFilters from "@/components/shared/JobFilters";
+import JobCard from "@/components/cards/JobCard";
 import type { Metadata } from "next";
+import { Job } from "@/types";
 
 export const metadata: Metadata = {
   title: "Jobs | DevOverFlow",
@@ -28,14 +25,21 @@ interface Props {
 const Page = async ({ searchParams }: Props) => {
   const userLocation = await fetchLocation();
 
+  const query =
+    searchParams.q || searchParams.location
+      ? `${searchParams.q || ""}, ${searchParams.location || ""}`
+          .trim()
+          .replace(/^,|,$/g, "")
+      : `Software Engineer in ${userLocation}`;
+
   const jobs = await fetchJobs({
-    query:
-      `${searchParams.q}, ${searchParams.location}` ??
-      `Software Engineer in ${userLocation}`,
+    query,
     page: searchParams.page ?? 1,
   });
 
   const countries = await fetchCountries();
+
+  console.log(countries);
 
   const page = parseInt(searchParams.page ?? 1);
 
@@ -60,7 +64,7 @@ const Page = async ({ searchParams }: Props) => {
         {jobs.length > 0 ? (
           jobs.map((job: Job) => {
             if (job.job_title && job.job_title.toLowerCase() !== "undefined")
-              return <JobCard key={job.id} job={job} />;
+              return <JobCard key={job.id || job.job_title} job={job} />;
 
             return null;
           })
